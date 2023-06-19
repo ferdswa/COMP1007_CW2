@@ -1,0 +1,10 @@
+//Got bored of trying to figure out how to isolate last digit
+//So i made this
+CHIP LastDigiter
+{
+    IN in[8];
+    OUT out;
+    PARTS:
+        Not(in=in[0],out=notA);
+        Not(in=notA,out=out);
+}

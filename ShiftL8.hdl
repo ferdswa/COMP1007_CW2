@@ -1,0 +1,55 @@
+CHIP ShiftL8
+{
+	IN  in[8], load;
+	OUT out[16];
+	
+	PARTS:
+        Mux(a=false,b=in[0],sel=load, out = toDFF);
+        DFF(in = toDFF,out = bruh,out=out[0]);
+
+        Mux(a=bruh,b=in[1],sel=load, out = toDFF1);
+        DFF(in = toDFF1,out = bruh1,out=out[1]);
+
+        Mux(a=bruh1,b=in[2],sel=load, out = toDFF2);
+        DFF(in = toDFF2,out = bruh2,out=out[2]);
+
+        Mux(a=bruh2,b=in[3],sel=load, out = toDFF3);
+        DFF(in = toDFF3,out = bruh3,out=out[3]);
+
+        Mux(a=bruh3,b=in[4],sel=load, out = toDFF4);
+        DFF(in = toDFF4,out = bruh4,out=out[4]);
+
+        Mux(a=bruh4,b=in[5],sel=load, out = toDFF5);
+        DFF(in = toDFF5,out = bruh5,out=out[5]);
+
+        Mux(a=bruh5,b=in[6],sel=load, out = toDFF6);
+        DFF(in = toDFF6,out = bruh6,out=out[6]);
+
+        Mux(a=bruh6,b=in[7],sel=load, out = toDFF7);
+        DFF(in = toDFF7,out = bruh7,out=out[7]);
+
+		Mux(a=bruh7,b=false,sel=load, out = toDFF8);
+        DFF(in = toDFF8,out = bruh8,out=out[8]);
+
+        Mux(a=bruh8,b=false,sel=load, out = toDFF9);
+        DFF(in = toDFF9,out = bruh9,out=out[9]);
+
+        Mux(a=bruh9,b=false,sel=load, out = toDFF10);
+        DFF(in = toDFF10,out = bruh10,out=out[10]);
+
+        Mux(a=bruh10,b=false,sel=load, out = toDFF11);
+        DFF(in = toDFF11,out = bruh11,out=out[11]);
+
+        Mux(a=bruh11,b=false,sel=load, out = toDFF12);
+        DFF(in = toDFF12,out = bruh12,out=out[12]]);
+
+        Mux(a=bruh12,b=false,sel=load, out = toDFF13);
+        DFF(in = toDFF13,out = bruh13,out=out[13]);
+
+        Mux(a=bruh13,b=false,sel=load, out = toDFF14);
+        DFF(in = toDFF14,out = bruh14,out=out[14]);
+
+        Mux(a=bruh14,b=false,sel=load, out = toDFF15);
+        DFF(in = toDFF15,out = bruh15,out=out[15]);
+}
+

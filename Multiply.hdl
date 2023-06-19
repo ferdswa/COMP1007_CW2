@@ -1,0 +1,14 @@
+CHIP Multiply
+{
+	IN a[8], b[8], load;
+	OUT out[16];
+
+	PARTS:
+		ShiftL8(in=a,load=load,out=outL);
+		ShiftR8(in=b,load=load,out=outR);
+		LastDigiter(in=outR,out=LDRS);
+		Mux16(a=false,b=outL,sel=LDRS,out=outM);
+		Add16(a=outM,b=regout,out=addout);
+		Mux16(a=addout,b=false,sel=load,out=r2);
+		Register(in=r2,load=true,out=out,out=regout);
+}
